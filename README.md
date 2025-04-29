@@ -1,7 +1,5 @@
 # 🚀 Collective Forecast Test Task
 
-[![Demo](https://img.shields.io/badge/DEMO-LINK-blue?style=for-the-badge)](https://coldmelnyk.github.io/react__test-task__collective-forecast/)
-
 ## 🛠 Tech Stack
 
 - **React**
@@ -41,3 +39,11 @@ Follow these steps to run the project locally:
    ```
 
 Now you can open the project in your browser at `http://localhost:5173/` 🚀
+
+## ⚡ How auto-scroll to the last message was implemented?
+
+Auto-scroll works by 'scrollIntoView' function which triggered in useEffect hook inside last Message component of the list in chat field, using useRef on the message's body.
+
+## ⚡ Zustand > Redux
+
+On such small projects, I'd prefer using Zustand as a state manager to avoid boilerplate code and increase my speed of coding.
