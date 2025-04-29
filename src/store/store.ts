@@ -23,6 +23,7 @@ const initialMessages: MessageType[] = [
 export const useChat = create<Store>(set => ({
   user: 'coldmelnyk',
   messages: initialMessages,
+  spamStatus: false,
   setUser: newUser =>
     set(() => ({
       user: newUser
@@ -34,5 +35,9 @@ export const useChat = create<Store>(set => ({
   uploadMessages: messages =>
     set(() => ({
       messages: [...messages]
+    })),
+  switchSpamStatus: () =>
+    set(state => ({
+      spamStatus: !state.spamStatus
     }))
 }));

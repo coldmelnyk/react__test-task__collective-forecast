@@ -28,8 +28,6 @@ export const ChatInputs = ({ chatId, author }: Props) => {
     });
   };
 
-  console.log(newMessage);
-
   return (
     <section>
       <form
