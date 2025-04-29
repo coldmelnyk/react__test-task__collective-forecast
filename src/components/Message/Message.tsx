@@ -1,22 +1,21 @@
-import cn from 'classnames';
 import React from 'react';
-
-const ZHEKA_PYZUR = '}I{EKA ny3blPb';
+import cn from 'classnames';
 
 interface Props {
   author: string;
   message: string;
+  user: string;
 }
 
-export const Message: React.FC<Props> = ({ author, message }) => {
+export const Message: React.FC<Props> = ({ author, message, user }) => {
   return (
     <li
       className={cn('p-3 border border-blue-950 w-[fit-content] rounded-md', {
-        'self-end': author === ZHEKA_PYZUR
+        'self-end': author === user
       })}
     >
       <h4>
-        Author: <span className='font-bold'>{author}</span>
+        Author: <span className="font-bold">{author}</span>
       </h4>
 
       <p>{message}</p>
