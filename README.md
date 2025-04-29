@@ -7,11 +7,8 @@
 - **React**
 - **TypeScript**
 - **TailwindCSS V3**
-- **Motion**
 - **Zustand**
-- **React Cookie**
 - **Classnames**
-- **Nano ID**
 
 ## ⚡ Getting Started
 
