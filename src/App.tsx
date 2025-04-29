@@ -1,5 +1,5 @@
-import { HelloWorld } from './components/HelloWorld';
+import { Chat } from './components/Chat';
 
 export default function App() {
-  return <HelloWorld />;
+  return <Chat />;
 }
