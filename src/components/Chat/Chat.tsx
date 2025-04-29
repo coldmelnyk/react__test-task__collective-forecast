@@ -16,6 +16,16 @@ export const Chat = () => {
 
   const filteredMessages = getMessages(chatId, messages);
 
+  const botReply = () => {
+    return setTimeout(() => {
+      handleNewMessage({
+        author: 'bot-1',
+        message: 'Interesting thought, maybe some day I`ll answer you a bit deeper...',
+        chatId
+      });
+    }, 1 * 1000);
+  }
+
   const botSpam = () => {
     setTimeout(() => {
       handleNewMessage({
@@ -32,7 +42,7 @@ export const Chat = () => {
         chatId,
         message: 'I am still here :)'
       });
-    }, 3 * 60000);
+    }, 1 * 60000);
   };
 
   if (chatId === 'bot-1' && !spamStatus) {
@@ -43,7 +53,7 @@ export const Chat = () => {
   return (
     <>
       <ChatField messages={filteredMessages} user={user} />
-      <ChatInputs chatId={chatId} author={user} />
+      <ChatInputs chatId={chatId} author={user} botReply={botReply} />
     </>
   );
 };

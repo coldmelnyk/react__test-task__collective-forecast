@@ -7,9 +7,10 @@ import { MessageType } from '../../types';
 interface Props {
   chatId: string;
   author: string;
+  botReply: () => number;
 }
 
-export const ChatInputs = ({ chatId, author }: Props) => {
+export const ChatInputs = ({ chatId, author, botReply }: Props) => {
   const [newMessage, setNewMessage] = useState<MessageType>({
     chatId,
     author,
@@ -26,6 +27,10 @@ export const ChatInputs = ({ chatId, author }: Props) => {
       author,
       message: ''
     });
+
+    if (chatId === 'bot-1') {
+      botReply();
+    }
   };
 
   return (

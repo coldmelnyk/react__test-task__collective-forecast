@@ -12,7 +12,7 @@ export const ChatsListPage = () => {
     (acc: string[], message: MessageType) => {
       if (
         message.author === currentUser &&
-        !acc.some(id => id === message.chatId)
+        !acc.some(id => id === message.chatId || id !== 'bot-1')
       ) {
         acc.push(message.chatId);
       }
