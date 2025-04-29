@@ -1,4 +1,5 @@
 import { useParams } from 'react-router';
+import dayjs from 'dayjs';
 
 import { ChatField, ChatInputs } from '..';
 
@@ -20,11 +21,13 @@ export const Chat = () => {
     return setTimeout(() => {
       handleNewMessage({
         author: 'bot-1',
-        message: 'Interesting thought, maybe some day I`ll answer you a bit deeper...',
-        chatId
+        message:
+          'Interesting thought, maybe some day I`ll answer you a bit deeper...',
+        chatId,
+        date: dayjs().format('YYYY-MM-DD HH:mm:ss')
       });
     }, 1 * 1000);
-  }
+  };
 
   const botSpam = () => {
     setTimeout(() => {
@@ -32,7 +35,8 @@ export const Chat = () => {
         author: 'bot-1',
         message:
           'Hey body! I am your dummy assistant who can only spam you a single message once in a few minutes! Excuse me but you cant turn me off((( Only if you reload or close this page, its a chance to avoid spam in this chat. Wish you good day!',
-        chatId
+        chatId,
+        date: dayjs().format('YYYY-MM-DD HH:mm:ss')
       });
     }, 1 * 1000);
 
@@ -40,7 +44,8 @@ export const Chat = () => {
       handleNewMessage({
         author: 'bot-1',
         chatId,
-        message: 'I am still here :)'
+        message: 'I am still here :)',
+        date: dayjs().format('YYYY-MM-DD HH:mm:ss')
       });
     }, 1 * 60000);
   };

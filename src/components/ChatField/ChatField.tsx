@@ -21,6 +21,7 @@ export const ChatField = ({ messages, user }: Props) => {
             key={i}
             author={message.author}
             message={message.message}
+            date={message.date}
             user={user}
             isLast={lastElementIndex === i}
             lastElement={lastElement}

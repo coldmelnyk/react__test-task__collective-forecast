@@ -7,6 +7,7 @@ interface Props {
   user: string;
   isLast: boolean;
   lastElement: React.RefObject<HTMLLIElement>;
+  date: string;
 }
 
 export const Message: React.FC<Props> = ({
@@ -14,7 +15,8 @@ export const Message: React.FC<Props> = ({
   message,
   user,
   isLast,
-  lastElement
+  lastElement,
+  date
 }) => {
   useEffect(() => {
     if (isLast && lastElement.current) {
@@ -29,17 +31,21 @@ export const Message: React.FC<Props> = ({
     <li
       ref={lastElement}
       className={cn(
-        'p-3 border border-blue-950 w-[fit-content] rounded-md max-w-[80%]',
+        'p-3 flex flex-col gap-2 border border-blue-950 w-[fit-content] rounded-md max-w-[80%]',
         {
           'self-end': author === user
         }
       )}
     >
-      <h4>
-        Author: <span className="font-bold uppercase">{author}</span>
-      </h4>
+      <div>
+        <h4>
+          Author: <span className="font-bold uppercase">{author}</span>
+        </h4>
 
-      <p>{message}</p>
+        <p>{message}</p>
+      </div>
+
+      <p className="self-end italic font-light text-xs">{date}</p>
     </li>
   );
 };

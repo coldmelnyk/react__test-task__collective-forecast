@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import dayjs from 'dayjs';
 
 import { useChat } from '../../store';
 
@@ -14,7 +15,8 @@ export const ChatInputs = ({ chatId, author, botReply }: Props) => {
   const [newMessage, setNewMessage] = useState<MessageType>({
     chatId,
     author,
-    message: ''
+    message: '',
+    date: dayjs().format('YYYY-MM-DD HH:mm:ss')
   });
   const handleNewMessage = useChat(state => state.setMessage);
 
@@ -25,7 +27,8 @@ export const ChatInputs = ({ chatId, author, botReply }: Props) => {
     setNewMessage({
       chatId,
       author,
-      message: ''
+      message: '',
+      date: dayjs().format('YYYY-MM-DD HH:mm:ss')
     });
 
     if (chatId === 'bot-1') {
