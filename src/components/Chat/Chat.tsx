@@ -16,7 +16,7 @@ export const Chat = () => {
   return (
     <>
       <ChatField messages={filteredMessages} user={user} />
-      <ChatInputs />
+      <ChatInputs chatId={chatId} author={user} />
     </>
   );
 };
