@@ -9,6 +9,7 @@
 - **TailwindCSS V3**
 - **Zustand**
 - **Classnames**
+- **DayJS**
 
 ## ⚡ Getting Started
 
