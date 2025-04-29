@@ -10,6 +10,8 @@
 - **Motion**
 - **Zustand**
 - **React Cookie**
+- **Classnames**
+- **Nano ID**
 
 ## ⚡ Getting Started
 

@@ -1,5 +1,11 @@
-import { Chat } from './components/Chat';
+import { Outlet } from 'react-router';
+
+import { BasicLayout } from './components/BasicLayout';
 
 export default function App() {
-  return <Chat />;
+  return (
+    <BasicLayout>
+      <Outlet />
+    </BasicLayout>
+  );
 }

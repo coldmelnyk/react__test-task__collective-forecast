@@ -1,13 +1,21 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
-import { Paths } from './enums';
+
+import { ChatPage, ChatsListPage, RegistrationPage } from './pages';
+
 import App from './App';
+
+import { Paths } from './enums';
 
 export const Root = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path={Paths.HOME} element={<App />}>
-          {/* here will be all other components and routes */}
+          <Route index element={<RegistrationPage />} />
+
+          <Route path={Paths.CHAT_LIST} element={<ChatsListPage />} />
+
+          <Route path={Paths.CHAT} element={<ChatPage />} />
         </Route>
         <Route path={Paths.NOT_FOUND} element={<Navigate to={Paths.HOME} />} />
       </Routes>
