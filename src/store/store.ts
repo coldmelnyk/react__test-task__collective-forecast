@@ -21,7 +21,7 @@ const initialMessages: MessageType[] = [
 ];
 
 export const useChat = create<Store>(set => ({
-  user: 'coldmelnyk',
+  user: '',
   messages: initialMessages,
   spamStatus: false,
   setUser: newUser =>
