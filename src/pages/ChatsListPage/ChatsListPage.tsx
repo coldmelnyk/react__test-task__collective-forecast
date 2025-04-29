@@ -1,12 +1,15 @@
-import { NavLink } from 'react-router';
+import { useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router';
 
 import { useChat } from '../../store';
 
 import { MessageType } from '../../types';
+import { Paths } from '../../enums';
 
 export const ChatsListPage = () => {
   const currentUser = useChat(state => state.user);
   const messages = useChat(state => state.messages);
+  const navigate = useNavigate();
 
   const availableChats = messages.reduce(
     (acc: string[], message: MessageType) => {
@@ -21,6 +24,12 @@ export const ChatsListPage = () => {
     },
     []
   );
+
+  useEffect(() => {
+    if (currentUser === '') {
+      navigate(Paths.HOME);
+    }
+  });
 
   return (
     <section className="flex flex-col gap-3">
